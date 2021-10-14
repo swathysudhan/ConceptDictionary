@@ -28,41 +28,44 @@ namespace ConceptDictionary
             }
         }
 
-        private void CheckAllValuesEntered(ConceptDictionary newObj)
-        {
-            if (chkboxCommonCoding.Checked == true)
-            {
-                categoryID = 2;
-                conceptdataAccess.InsertConceptValue(newobj, categoryID);
-            }
-            else if (chkboxSDLC.Checked == true)
-            {
-                categoryID = 1;
-                conceptdataAccess.InsertConceptValue(newobj, categoryID);
-            }
-            else if (chkboxOOPs.Checked == true)
-            {
-                categoryID = 3;
-                conceptdataAccess.InsertConceptValue(newobj, categoryID);
-            }
-            else if (chkboxTesting.Checked == true)
-            {
-                categoryID = 4;
-                conceptdataAccess.InsertConceptValue(newobj, categoryID);
-            }
-            else
-            {
-                MessageBox.Show("Category not selected");
-            }
-        }
+        //private void CheckAllValuesEntered(ConceptDictionary newObj)
+        //{
+        //    if (chkboxCommonCoding.Checked == true)
+        //    {
+        //        categoryID = 2;
+        //        conceptdataAccess.InsertConceptValue(newobj, categoryID);
+        //    }
+        //    else if (chkboxSDLC.Checked == true)
+        //    {
+        //        categoryID = 1;
+        //        conceptdataAccess.InsertConceptValue(newobj, categoryID);
+        //    }
+        //    else if (chkboxOOPs.Checked == true)
+        //    {
+        //        categoryID = 3;
+        //        conceptdataAccess.InsertConceptValue(newobj, categoryID);
+        //    }
+        //    else if (chkboxTesting.Checked == true)
+        //    {
+        //        categoryID = 4;
+        //        conceptdataAccess.InsertConceptValue(newobj, categoryID);
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Category not selected");
+        //    }
+        //}
         private void btnInsert_Click(object sender, EventArgs e)
         {
             if ((txtTitle.Text == string.Empty) || (txtURi.Text == String.Empty) || (richTextBox1.Text == string.Empty))
             {
                 MessageBox.Show("Values are missing");
             }
+            categoryID = comboBox1.SelectedIndex +1 ;
             newobj = new ConceptDictionary(txtTitle.Text, richTextBox1.Text, filePath, txtURi.Text);
-            CheckAllValuesEntered(newobj);
+            conceptdataAccess.InsertConceptValue(newobj, categoryID);
+
+            //  CheckAllValuesEntered(newobj);
 
 
         }
@@ -92,77 +95,72 @@ namespace ConceptDictionary
 
         private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string val = listBox1.SelectedItem.ToString();
-            int subval = Convert.ToInt32(val.Substring(0, 1));
-            string subval2 = val.Substring(1, (val.Length - 1));
-            for (int i = 0; i < conceptArray.Length; i++)
+            try
             {
-                if (conceptArray[i].ConceptID1 == subval)
+                string val = listBox1.SelectedItem.ToString();
+                int subval = Convert.ToInt32(val.Substring(0, 1));
+                string subval2 = val.Substring(1, (val.Length - 1));
+                for (int i = 0; i < conceptArray.Length; i++)
                 {
-                    txtTitle.Text = conceptArray[i].Title;
-                    txtURi.Text = conceptArray[i].ConceptLink1;
-                    richTextBox1.Text = conceptArray[i].Body;
+                    if (conceptArray[i].ConceptID1 == subval)
+                    {
+                        txtTitle.Text = conceptArray[i].Title;
+                        txtURi.Text = conceptArray[i].ConceptLink1;
+                        richTextBox1.Text = conceptArray[i].Body;
+                    }
                 }
             }
+            catch(System.NullReferenceException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+          
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string val = listBox1.SelectedItem.ToString();
-            int subval = Convert.ToInt32(val.Substring(0, 1));
-            string subval2 = val.Substring(1,(val.Length-1));
-            conceptdataAccess.DeleteConceptValue(subval);
+            try
+            {
+                string val = listBox1.SelectedItem.ToString();
+                int subval = Convert.ToInt32(val.Substring(0, 1));
+                conceptdataAccess.DeleteConceptValue(subval);
+            }
+            catch(System.NullReferenceException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             MessageBox.Show("Deleted Sucessfully");
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            
-            string val = listBox1.SelectedItem.ToString();
-            int subval = Convert.ToInt32(val.Substring(0, 1));
-            string subval2 = val.Substring(1, (val.Length - 1));
-            for (int i = 0; i < conceptArray.Length; i++)
+            try
             {
-                if(conceptArray[i].Title == subval2)
+                string val = listBox1.SelectedItem.ToString();
+                int subval = Convert.ToInt32(val.Substring(0, 1));
+                string subval2 = val.Substring(1, (val.Length - 1));
+                for (int i = 0; i < conceptArray.Length; i++)
                 {
-                    txtTitle.Text = conceptArray[i].Title;
-                    txtURi.Text = conceptArray[i].ConceptLink1;
-                    richTextBox1.Text = conceptArray[i].Body;
+                    if (conceptArray[i].Title == subval2)
+                    {
+                        txtTitle.Text = conceptArray[i].Title;
+                        txtURi.Text = conceptArray[i].ConceptLink1;
+                        richTextBox1.Text = conceptArray[i].Body;
+                    }
                 }
+                if ((txtTitle.Text == string.Empty) || (txtURi.Text == String.Empty) || (richTextBox1.Text == string.Empty))
+                {
+                    MessageBox.Show("Values are missing");
+                }
+                newobj = new ConceptDictionary(subval, txtTitle.Text, richTextBox1.Text, filePath, txtURi.Text, categoryID);
+                conceptdataAccess.UpdateConceptValue(newobj);
+                MessageBox.Show("Updated Successfully");
+            }
+            catch(NullReferenceException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             
-            if ((txtTitle.Text == string.Empty) || (txtURi.Text == String.Empty) || (richTextBox1.Text == string.Empty))
-            {
-                MessageBox.Show("Values are missing");
-            }
-            newobj = new ConceptDictionary(subval, txtTitle.Text, richTextBox1.Text, filePath, txtURi.Text, categoryID);
-     
-            if (chkboxCommonCoding.Checked == true)
-            {
-                categoryID = 2;
-                conceptdataAccess.UpdateConceptValue(newobj);
-            }
-            else if (chkboxSDLC.Checked == true)
-            {
-                categoryID = 1;
-                conceptdataAccess.UpdateConceptValue(newobj);
-            }
-            else if (chkboxOOPs.Checked == true)
-            {
-                categoryID = 3;
-                conceptdataAccess.UpdateConceptValue(newobj);
-            }
-            else if (chkboxTesting.Checked == true)
-            {
-                categoryID = 4;
-                conceptdataAccess.UpdateConceptValue(newobj);
-            }
-            else
-            {
-                MessageBox.Show("Category not selected");
-            }
-            
-            MessageBox.Show("Updated Successfully");
         }
     }
 }

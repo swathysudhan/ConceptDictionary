@@ -30,10 +30,6 @@ namespace ConceptDictionary
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.chkboxSDLC = new System.Windows.Forms.CheckBox();
-            this.chkboxCommonCoding = new System.Windows.Forms.CheckBox();
-            this.chkboxOOPs = new System.Windows.Forms.CheckBox();
-            this.chkboxTesting = new System.Windows.Forms.CheckBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.lblBody = new System.Windows.Forms.Label();
@@ -63,58 +59,6 @@ namespace ConceptDictionary
             this.label1.Size = new System.Drawing.Size(141, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Select Category *";
-            // 
-            // chkboxSDLC
-            // 
-            this.chkboxSDLC.AutoSize = true;
-            this.chkboxSDLC.BackColor = System.Drawing.Color.Transparent;
-            this.chkboxSDLC.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.chkboxSDLC.ForeColor = System.Drawing.Color.Violet;
-            this.chkboxSDLC.Location = new System.Drawing.Point(184, 51);
-            this.chkboxSDLC.Name = "chkboxSDLC";
-            this.chkboxSDLC.Size = new System.Drawing.Size(57, 21);
-            this.chkboxSDLC.TabIndex = 1;
-            this.chkboxSDLC.Text = "SDLC";
-            this.chkboxSDLC.UseVisualStyleBackColor = false;
-            // 
-            // chkboxCommonCoding
-            // 
-            this.chkboxCommonCoding.AutoSize = true;
-            this.chkboxCommonCoding.BackColor = System.Drawing.Color.Transparent;
-            this.chkboxCommonCoding.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.chkboxCommonCoding.ForeColor = System.Drawing.Color.Violet;
-            this.chkboxCommonCoding.Location = new System.Drawing.Point(269, 53);
-            this.chkboxCommonCoding.Name = "chkboxCommonCoding";
-            this.chkboxCommonCoding.Size = new System.Drawing.Size(184, 21);
-            this.chkboxCommonCoding.TabIndex = 2;
-            this.chkboxCommonCoding.Text = "Common Coding Concept";
-            this.chkboxCommonCoding.UseVisualStyleBackColor = false;
-            // 
-            // chkboxOOPs
-            // 
-            this.chkboxOOPs.AutoSize = true;
-            this.chkboxOOPs.BackColor = System.Drawing.Color.Transparent;
-            this.chkboxOOPs.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.chkboxOOPs.ForeColor = System.Drawing.Color.Violet;
-            this.chkboxOOPs.Location = new System.Drawing.Point(471, 51);
-            this.chkboxOOPs.Name = "chkboxOOPs";
-            this.chkboxOOPs.Size = new System.Drawing.Size(115, 21);
-            this.chkboxOOPs.TabIndex = 3;
-            this.chkboxOOPs.Text = "OOP Concepts";
-            this.chkboxOOPs.UseVisualStyleBackColor = false;
-            // 
-            // chkboxTesting
-            // 
-            this.chkboxTesting.AutoSize = true;
-            this.chkboxTesting.BackColor = System.Drawing.Color.Transparent;
-            this.chkboxTesting.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.chkboxTesting.ForeColor = System.Drawing.Color.Violet;
-            this.chkboxTesting.Location = new System.Drawing.Point(605, 51);
-            this.chkboxTesting.Name = "chkboxTesting";
-            this.chkboxTesting.Size = new System.Drawing.Size(70, 21);
-            this.chkboxTesting.TabIndex = 4;
-            this.chkboxTesting.Text = "Testing";
-            this.chkboxTesting.UseVisualStyleBackColor = false;
             // 
             // lblTitle
             // 
@@ -181,7 +125,7 @@ namespace ConceptDictionary
             // 
             // txtURi
             // 
-            this.txtURi.Location = new System.Drawing.Point(184, 343);
+            this.txtURi.Location = new System.Drawing.Point(184, 354);
             this.txtURi.Name = "txtURi";
             this.txtURi.Size = new System.Drawing.Size(152, 23);
             this.txtURi.TabIndex = 14;
@@ -194,7 +138,7 @@ namespace ConceptDictionary
             this.btnInsert.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnInsert.FlatAppearance.BorderSize = 0;
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnInsert.Location = new System.Drawing.Point(141, 387);
+            this.btnInsert.Location = new System.Drawing.Point(688, 257);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(100, 35);
             this.btnInsert.TabIndex = 15;
@@ -225,8 +169,8 @@ namespace ConceptDictionary
             this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnDelete.Location = new System.Drawing.Point(634, 387);
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDelete.Location = new System.Drawing.Point(694, 391);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(94, 37);
             this.btnDelete.TabIndex = 17;
@@ -237,9 +181,9 @@ namespace ConceptDictionary
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(471, 174);
+            this.comboBox1.Location = new System.Drawing.Point(184, 53);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(174, 23);
+            this.comboBox1.Size = new System.Drawing.Size(266, 23);
             this.comboBox1.TabIndex = 18;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -247,9 +191,9 @@ namespace ConceptDictionary
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(471, 217);
+            this.listBox1.Location = new System.Drawing.Point(456, 117);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(174, 109);
+            this.listBox1.Size = new System.Drawing.Size(266, 109);
             this.listBox1.TabIndex = 19;
             // 
             // btnUpdate
@@ -260,7 +204,7 @@ namespace ConceptDictionary
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnUpdate.FlatAppearance.BorderSize = 0;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnUpdate.Location = new System.Drawing.Point(471, 387);
+            this.btnUpdate.Location = new System.Drawing.Point(688, 331);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 35);
             this.btnUpdate.TabIndex = 20;
@@ -271,9 +215,12 @@ namespace ConceptDictionary
             // lblForm2Title
             // 
             this.lblForm2Title.AutoSize = true;
+            this.lblForm2Title.BackColor = System.Drawing.Color.Transparent;
+            this.lblForm2Title.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblForm2Title.ForeColor = System.Drawing.Color.Lime;
             this.lblForm2Title.Location = new System.Drawing.Point(282, 9);
             this.lblForm2Title.Name = "lblForm2Title";
-            this.lblForm2Title.Size = new System.Drawing.Size(171, 15);
+            this.lblForm2Title.Size = new System.Drawing.Size(229, 20);
             this.lblForm2Title.TabIndex = 21;
             this.lblForm2Title.Text = "Updating Data to the Database.";
             // 
@@ -283,13 +230,13 @@ namespace ConceptDictionary
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Lime;
-            this.label3.Location = new System.Drawing.Point(441, 93);
+            this.label3.Location = new System.Drawing.Point(456, 51);
             this.label3.MaximumSize = new System.Drawing.Size(300, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(296, 63);
+            this.label3.Size = new System.Drawing.Size(300, 63);
             this.label3.TabIndex = 22;
-            this.label3.Text = "Select Category from Combobox and Items to deleted or updated from the List given" +
-    " below.";
+            this.label3.Text = "Select Category from Combobox and Items to Inserted, Deleted or Updated from the " +
+    "List given below.";
             // 
             // ConceptDataManipulation
             // 
@@ -313,10 +260,6 @@ namespace ConceptDictionary
             this.Controls.Add(this.lblBody);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.chkboxTesting);
-            this.Controls.Add(this.chkboxOOPs);
-            this.Controls.Add(this.chkboxCommonCoding);
-            this.Controls.Add(this.chkboxSDLC);
             this.Controls.Add(this.label1);
             this.Name = "ConceptDataManipulation";
             this.Text = "ConceptDataManipulation";
@@ -328,10 +271,6 @@ namespace ConceptDictionary
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox chkboxSDLC;
-        private System.Windows.Forms.CheckBox chkboxCommonCoding;
-        private System.Windows.Forms.CheckBox chkboxOOPs;
-        private System.Windows.Forms.CheckBox chkboxTesting;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label lblBody;

@@ -74,7 +74,7 @@ namespace ConceptDictionary
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(12, 24);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(142, 23);
+            this.comboBox1.Size = new System.Drawing.Size(240, 23);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -84,7 +84,7 @@ namespace ConceptDictionary
             this.listBox1.ItemHeight = 15;
             this.listBox1.Location = new System.Drawing.Point(12, 53);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(141, 109);
+            this.listBox1.Size = new System.Drawing.Size(225, 124);
             this.listBox1.TabIndex = 3;
             // 
             // pictureBox1
