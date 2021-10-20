@@ -1,7 +1,7 @@
 ﻿
 namespace ConceptDictionary
 {
-    partial class ProgrammingConceptsDictionary
+    partial class ProgrammingConceptsDictionaryForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -124,7 +124,7 @@ namespace ConceptDictionary
             this.conceptLinklbl.Text = "ConceptLink";
             this.conceptLinklbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.conceptLinklbl_LinkClicked);
             // 
-            // ProgrammingConceptsDictionary
+            // ProgrammingConceptsDictionaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -141,7 +141,7 @@ namespace ConceptDictionary
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAdd);
             this.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Name = "ProgrammingConceptsDictionary";
+            this.Name = "ProgrammingConceptsDictionaryForm";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

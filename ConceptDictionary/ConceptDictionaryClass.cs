@@ -5,7 +5,7 @@ using System.Drawing;
 
 namespace ConceptDictionary
 {
-    public class ConceptDictionary
+    public class ConceptDictionaryClass
     {
         private int ConceptID;
         private string title;
@@ -14,7 +14,7 @@ namespace ConceptDictionary
         private string ConceptLink;
         private int CategoryID;
 
-        public ConceptDictionary(string title, string body, string conceptImage, string conceptLink)
+        public ConceptDictionaryClass(string title, string body, string conceptImage, string conceptLink)
         {
             this.title = title;
             this.body = body;
@@ -22,7 +22,7 @@ namespace ConceptDictionary
             ConceptLink = conceptLink;
         }
 
-        public ConceptDictionary(int conceptID, string title, string body, string conceptImage, string conceptLink, int categoryID)
+        public ConceptDictionaryClass(int conceptID, string title, string body, string conceptImage, string conceptLink, int categoryID)
         {
             ConceptID = conceptID;
             this.title = title;

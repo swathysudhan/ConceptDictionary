@@ -16,9 +16,9 @@ namespace ConceptDictionary
 
         public string ConnectionString1 { get => ConnectionString; set => ConnectionString = value; }
 
-        public ConceptDictionary[] ReadAllConcept(string selectedItem)
+        public ConceptDictionaryClass[] ReadAllConcept(string selectedItem)
         {
-            List<ConceptDictionary> result = new List<ConceptDictionary>();
+            List<ConceptDictionaryClass> result = new List<ConceptDictionaryClass>();
             using (var connection = new SQLiteConnection(ConnectionString))
             {
                 connection.Open();
@@ -29,7 +29,7 @@ namespace ConceptDictionary
                 {
                     while (reader.Read())
                     {
-                        result.Add(new ConceptDictionary(reader.GetInt32(0), reader.GetString(1),reader.GetString(2),reader.GetString(3),reader.GetString(4),reader.GetInt32(5)));
+                        result.Add(new ConceptDictionaryClass(reader.GetInt32(0), reader.GetString(1),reader.GetString(2),reader.GetString(3),reader.GetString(4),reader.GetInt32(5)));
 
                     }
                 }
@@ -37,7 +37,7 @@ namespace ConceptDictionary
             }
             return result.ToArray();
         }
-        public void InsertConceptValue(ConceptDictionary newConcept,int categoryID)
+        public void InsertConceptValue(ConceptDictionaryClass newConcept,int categoryID)
         {
             using (var connection = new SQLiteConnection(ConnectionString))
             {
@@ -65,7 +65,7 @@ namespace ConceptDictionary
 
         }
 
-        public void UpdateConceptValue(ConceptDictionary updateConcept)
+        public void UpdateConceptValue(ConceptDictionaryClass updateConcept)
         {
             using (var connection = new SQLiteConnection(ConnectionString))
             {

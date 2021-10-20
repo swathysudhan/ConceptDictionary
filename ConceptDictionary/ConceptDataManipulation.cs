@@ -12,8 +12,8 @@ namespace ConceptDictionary
     {
         int categoryID = 0;
         string filePath = string.Empty;
-        ConceptDictionary newobj;
-        ConceptDictionary[] conceptArray;
+        ConceptDictionaryClass newobj;
+        ConceptDictionaryClass[] conceptArray;
         Category[] categoryData;
         CategoryDataAccess categorydataaccess = new CategoryDataAccess("Data Source = ConceptDictionaryDB.db");
         ConceptDataAccess conceptdataAccess = new ConceptDataAccess("Data Source = ConceptDictionaryDB.db");
@@ -27,47 +27,19 @@ namespace ConceptDictionary
 
             }
         }
-
-        //private void CheckAllValuesEntered(ConceptDictionary newObj)
-        //{
-        //    if (chkboxCommonCoding.Checked == true)
-        //    {
-        //        categoryID = 2;
-        //        conceptdataAccess.InsertConceptValue(newobj, categoryID);
-        //    }
-        //    else if (chkboxSDLC.Checked == true)
-        //    {
-        //        categoryID = 1;
-        //        conceptdataAccess.InsertConceptValue(newobj, categoryID);
-        //    }
-        //    else if (chkboxOOPs.Checked == true)
-        //    {
-        //        categoryID = 3;
-        //        conceptdataAccess.InsertConceptValue(newobj, categoryID);
-        //    }
-        //    else if (chkboxTesting.Checked == true)
-        //    {
-        //        categoryID = 4;
-        //        conceptdataAccess.InsertConceptValue(newobj, categoryID);
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Category not selected");
-        //    }
-        //}
         private void btnInsert_Click(object sender, EventArgs e)
         {
             if ((txtTitle.Text == string.Empty) || (txtURi.Text == String.Empty) || (richTextBox1.Text == string.Empty))
             {
                 MessageBox.Show("Values are missing");
             }
-            categoryID = comboBox1.SelectedIndex +1 ;
-            newobj = new ConceptDictionary(txtTitle.Text, richTextBox1.Text, filePath, txtURi.Text);
-            conceptdataAccess.InsertConceptValue(newobj, categoryID);
-
-            //  CheckAllValuesEntered(newobj);
-
-
+            else
+            {
+                categoryID = comboBox1.SelectedIndex + 1;
+                newobj = new ConceptDictionaryClass(txtTitle.Text, richTextBox1.Text, filePath, txtURi.Text);
+                conceptdataAccess.InsertConceptValue(newobj, categoryID);
+            }
+          
         }
 
         private void SelectImageLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -152,7 +124,7 @@ namespace ConceptDictionary
                 {
                     MessageBox.Show("Values are missing");
                 }
-                newobj = new ConceptDictionary(subval, txtTitle.Text, richTextBox1.Text, filePath, txtURi.Text, categoryID);
+                newobj = new ConceptDictionaryClass(subval, txtTitle.Text, richTextBox1.Text, filePath, txtURi.Text, categoryID);
                 conceptdataAccess.UpdateConceptValue(newobj);
                 MessageBox.Show("Updated Successfully");
             }

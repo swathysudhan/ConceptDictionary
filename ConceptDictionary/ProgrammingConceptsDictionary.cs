@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace ConceptDictionary
 {
-    public partial class ProgrammingConceptsDictionary : Form
+    public partial class ProgrammingConceptsDictionaryForm : Form
     {
         Category[] categoryData;
-        ConceptDictionary[] conceptArray;
+        ConceptDictionaryClass[] conceptArray;
         CategoryDataAccess categorydataaccess = new CategoryDataAccess("Data Source = ConceptDictionaryDB.db");
         ConceptDataAccess conceptdataAccess = new ConceptDataAccess("Data Source = ConceptDictionaryDB.db");
-        public ProgrammingConceptsDictionary()
+        public ProgrammingConceptsDictionaryForm()
         {
             InitializeComponent();
             categoryData = categorydataaccess.ReadAllCategory();
@@ -66,6 +66,8 @@ namespace ConceptDictionary
         {
             ConceptDataManipulation form2 = new ConceptDataManipulation();
             form2.Show();
+            this.Hide();
+            
         }
     }
 }
